@@ -9,34 +9,42 @@ import {
   ScrollView,
 } from "react-native";
 
-const Direta = () => {
+const Recuperacao = () => {
   // 1º Semestre
   const [grade1, setGrade1] = useState(0);
   const [grade2, setGrade2] = useState(0);
+  const [rec1, setRec1] = useState(0);
   const total1 = grade1 + grade2;
   const average1 = total1 / 2;
+  const averageRec1 = (average1 + rec1) / 2;
 
   const grade1Ref = useRef(null);
   const grade2Ref = useRef(null);
+  const rec1Ref = useRef(null);
 
   // 2º Semestre
   const [grade3, setGrade3] = useState(0);
   const [grade4, setGrade4] = useState(0);
+  const [rec2, setRec2] = useState(0);
   const total2 = grade3 + grade4;
   const average2 = total2 / 2;
+  const averageRec2 = (average2 + rec2) / 2;
 
   const grade3Ref = useRef(null);
   const grade4Ref = useRef(null);
+  const rec2Ref = useRef(null);
 
   // média geral
-  const average = (average1 + average2) / 2;
+  const average = (averageRec1 + averageRec2) / 2;
 
   const handleDelete = () => {
     grade1Ref.current.clear();
     grade1Ref.current.focus();
     grade2Ref.current.clear();
+    rec1Ref.current.clear();
     grade3Ref.current.clear();
     grade4Ref.current.clear();
+    rec2Ref.current.clear();
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -61,12 +69,24 @@ const Direta = () => {
           ref={grade2Ref}
           style={styles.input}
           onChangeText={(text) => setGrade2(parseFloat(text))}
-          onSubmitEditing={() => grade3Ref.current.focus()}
+          onSubmitEditing={() => rec1Ref.current.focus()}
         />
 
         <View>
           <Text style={styles.txtH2}>Média 1º Semestre</Text>
           <Text style={styles.average}> {average1}</Text>
+          <TextInput
+            placeholder="Recuperação 1º Semestre"
+            placeholderTextColor="#999"
+            keyboardType="numeric"
+            selectTextOnFocus
+            ref={rec1Ref}
+            style={styles.input}
+            onChangeText={(text) => setRec1(parseFloat(text))}
+            onSubmitEditing={() => grade3Ref.current.focus()}
+          />
+          <Text style={styles.txtH2}>Média 1º Semestre com Recuperação</Text>
+          <Text style={styles.average}> {averageRec1}</Text>
         </View>
         <Text style={styles.txtHR}></Text>
 
@@ -95,6 +115,17 @@ const Direta = () => {
         <View>
           <Text style={styles.txtH2}>Média 2º Semestre</Text>
           <Text style={styles.average}> {average2}</Text>
+          <TextInput
+            placeholder="Recuperação 2º Semestre"
+            placeholderTextColor="#999"
+            keyboardType="numeric"
+            selectTextOnFocus
+            ref={rec2Ref}
+            style={styles.input}
+            onChangeText={(text) => setRec2(parseFloat(text))}
+          />
+          <Text style={styles.txtH2}>Média 2º Semestre com Recuperação</Text>
+          <Text style={styles.average}> {averageRec2}</Text>
         </View>
         <Text style={styles.txtHR}></Text>
         <View>
@@ -112,12 +143,12 @@ const Direta = () => {
   );
 };
 
-export default Direta;
+export default Recuperacao;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1C4D4F",
+    backgroundColor: "#401A3E",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -127,7 +158,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   txtH1: {
-    color: "#7CD0CC",
+    color: "#E2BCDC",
     fontSize: 30,
     marginBottom: 30,
     marginTop: 30,
@@ -136,7 +167,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   txtH2: {
-    color: "#7CD0CC",
+    color: "#E2BCDC",
     fontSize: 15,
     marginBottom: 15,
     marginTop: 15,
@@ -148,15 +179,15 @@ const styles = StyleSheet.create({
   input: {
     margin: 30,
     borderBottomWidth: 1,
-    borderBottomColor: "#A6D8D6",
+    borderBottomColor: "#795274",
     padding: 2,
     fontSize: 20,
-    color: "white",
+    color: "#E2BCDC",
     textAlign: "center",
   },
   average: {
     fontSize: 85,
-    color: "#7CD0CC",
+    color: "#BF8EB8",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -2, height: 3 },
     textShadowRadius: 10,
@@ -164,7 +195,7 @@ const styles = StyleSheet.create({
   },
   generalAverage: {
     fontSize: 85,
-    color: "#3DF3ED",
+    color: "#ED0BCF",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,
@@ -172,7 +203,7 @@ const styles = StyleSheet.create({
   },
   txtAverage: {
     fontSize: 20,
-    color: "#3DF3ED",
+    color: "#ED0BCF",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -2, height: 3 },
     textShadowRadius: 10,
@@ -180,8 +211,8 @@ const styles = StyleSheet.create({
   },
   txtHR: {
     height: 1,
-    width: "100%",
-    backgroundColor: "#3DF3ED",
+    width: "90%",
+    backgroundColor: "#ED0BCF",
     margin: 20,
   },
   scrollView: {
@@ -192,7 +223,7 @@ const styles = StyleSheet.create({
   btn: {
     height: 40,
     width: "50%",
-    backgroundColor: "#0C3231",
+    backgroundColor: "#371032",
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
@@ -201,7 +232,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   btnText: {
-    color: "#7CD0CC",
+    color: "white",
     fontSize: 20,
   },
   view: {
