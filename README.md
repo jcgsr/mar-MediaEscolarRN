@@ -1,2 +1,4 @@
 # mar-MediaEscolarRN
-App para Android e iOS para os professores tirarem as médias escolares
+
+App Android e iOS para os professores tirarem as médias escolares de
+uma forma mais prática
