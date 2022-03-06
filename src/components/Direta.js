@@ -39,73 +39,79 @@ const Direta = () => {
     grade4Ref.current.clear();
   };
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        {/* 1º Semestre */}
-        <TextInput
-          placeholder="1ª nota"
-          placeholderTextColor="#999"
-          onFocus={() => grade1Ref.current.focus()}
-          selectTextOnFocus
-          keyboardType="numeric"
-          ref={grade1Ref}
-          style={styles.input}
-          onChangeText={(text) => setGrade1(parseFloat(text))}
-          onSubmitEditing={() => grade2Ref.current.focus()}
-        />
-        <TextInput
-          placeholder="2ª nota"
-          placeholderTextColor="#999"
-          keyboardType="numeric"
-          selectTextOnFocus
-          ref={grade2Ref}
-          style={styles.input}
-          onChangeText={(text) => setGrade2(parseFloat(text))}
-          onSubmitEditing={() => grade3Ref.current.focus()}
-        />
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          {/* 1º Semestre */}
+          <View style={styles.viewSem1}>
+            <TextInput
+              placeholder="1ª nota"
+              placeholderTextColor="#999"
+              onFocus={() => grade1Ref.current.focus()}
+              selectTextOnFocus
+              keyboardType="numeric"
+              ref={grade1Ref}
+              style={styles.input}
+              onChangeText={(text) => setGrade1(parseFloat(text))}
+              onSubmitEditing={() => grade2Ref.current.focus()}
+            />
+            <TextInput
+              placeholder="2ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade2Ref}
+              style={styles.input}
+              onChangeText={(text) => setGrade2(parseFloat(text))}
+              onSubmitEditing={() => grade3Ref.current.focus()}
+            />
 
-        <View>
-          <Text style={styles.txtH2}>Média 1º Semestre</Text>
-          <Text style={styles.average}> {average1}</Text>
-        </View>
-        <Text style={styles.txtHR}></Text>
+            <View>
+              <Text style={styles.txtH2}>Média 1º Sem.</Text>
+              <Text style={styles.average}> {average1.toFixed(1)}</Text>
+            </View>
+          </View>
+          {/* <Text style={styles.txtHR}></Text> */}
 
-        {/* 2º Semestre */}
-        <TextInput
-          placeholder="3ª nota"
-          placeholderTextColor="#999"
-          onFocus={() => grade3Ref.current.focus()}
-          selectTextOnFocus
-          keyboardType="numeric"
-          ref={grade3Ref}
-          style={styles.input}
-          onChangeText={(text) => setGrade3(parseFloat(text))}
-          onSubmitEditing={() => grade4Ref.current.focus()}
-        />
-        <TextInput
-          placeholder="4ª nota"
-          placeholderTextColor="#999"
-          keyboardType="numeric"
-          selectTextOnFocus
-          ref={grade4Ref}
-          style={styles.input}
-          onChangeText={(text) => setGrade4(parseFloat(text))}
-        />
+          {/* 2º Semestre */}
+          <View style={styles.viewSem2}>
+            <TextInput
+              placeholder="3ª nota"
+              placeholderTextColor="#999"
+              onFocus={() => grade3Ref.current.focus()}
+              selectTextOnFocus
+              keyboardType="numeric"
+              ref={grade3Ref}
+              style={styles.input}
+              onChangeText={(text) => setGrade3(parseFloat(text))}
+              onSubmitEditing={() => grade4Ref.current.focus()}
+            />
+            <TextInput
+              placeholder="4ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade4Ref}
+              style={styles.input}
+              onChangeText={(text) => setGrade4(parseFloat(text))}
+            />
 
-        <View>
-          <Text style={styles.txtH2}>Média 2º Semestre</Text>
-          <Text style={styles.average}> {average2}</Text>
-        </View>
-        <Text style={styles.txtHR}></Text>
-        <View>
-          <Text style={styles.txtAverage}>Média Geral</Text>
-          <Text style={styles.generalAverage}> {average.toFixed(1)}</Text>
-        </View>
-        <Text style={styles.txtHR}></Text>
-        <View style={styles.view}>
-          <TouchableOpacity style={styles.btn} onPress={handleDelete}>
-            <Text style={styles.btnText}>Apagar Notas</Text>
-          </TouchableOpacity>
+            <View>
+              <Text style={styles.txtH2}>Média 2º Sem.</Text>
+              <Text style={styles.average}> {average2.toFixed(1)}</Text>
+            </View>
+          </View>
+          {/* <Text style={styles.txtHR}></Text> */}
+          <View style={styles.viewAverage}>
+            <Text style={styles.txtAverage}>Média Geral</Text>
+            <Text style={styles.generalAverage}> {average.toFixed(1)}</Text>
+            <Text style={styles.txtHR}></Text>
+            <View style={styles.view}>
+              <TouchableOpacity style={styles.btn} onPress={handleDelete}>
+                <Text style={styles.btnText}>Apagar Notas</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -117,14 +123,29 @@ export default Direta;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "100%",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "flex-start",
+    justifyContent: "space-evenly",
     backgroundColor: "#1C4D4F",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  viewSem1: {
+    width: "50%",
+    backgroundColor: "#1c544f",
+  },
+  viewSem2: {
+    width: "50%",
+    backgroundColor: "#1c584f",
+  },
+  viewAverage: {
+    width: "100%",
+    backgroundColor: "#1c543e",
   },
   scrollView: {
-    marginHorizontal: 20,
-    marginBottom: 20,
-    width: "100%",
+    // marginHorizontal: 20,
+    // marginBottom: 20,
+    // width: "100%",
   },
   txtH1: {
     color: "#7CD0CC",
@@ -155,7 +176,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   average: {
-    fontSize: 85,
+    fontSize: 65,
     color: "#7CD0CC",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -2, height: 3 },
@@ -163,7 +184,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   generalAverage: {
-    fontSize: 85,
+    fontSize: 75,
     color: "#3DF3ED",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -1, height: 1 },
@@ -172,6 +193,7 @@ const styles = StyleSheet.create({
   },
   txtAverage: {
     fontSize: 20,
+    marginTop: 30,
     color: "#3DF3ED",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -2, height: 3 },
@@ -180,14 +202,14 @@ const styles = StyleSheet.create({
   },
   txtHR: {
     height: 1,
-    width: "100%",
+    width: "90%",
     backgroundColor: "#3DF3ED",
     margin: 20,
   },
   scrollView: {
-    marginHorizontal: 20,
-    marginBottom: 20,
-    width: "90%",
+    // marginHorizontal: 20,
+    // marginBottom: 20,
+    // width: "90%",
   },
   btn: {
     height: 40,
@@ -202,7 +224,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: "#7CD0CC",
-    fontSize: 20,
+    fontSize: 15,
   },
   view: {
     display: "flex",

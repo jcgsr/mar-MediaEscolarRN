@@ -1,3 +1,4 @@
+import React from "react";
 import {
   View,
   Text,
@@ -6,24 +7,40 @@ import {
   ScrollView,
   FlatList,
   TouchableOpacity,
+  Linking,
 } from "react-native";
-import React from "react";
+
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const DATA = [
   {
-    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque iste totam alias vel nam expedita dolorum error. Excepturi, soluta ipsam accusantium dolorum eum officia eveniet nisi molestiae corrupti dignissimos.",
+    id: "1",
+    title: "A média utilizada nesse App é 5.0.",
   },
   {
-    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+    id: "2",
     title:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque iste totam alias vel nam expedita dolorum error. Excepturi, soluta ipsam accusantium dolorum eum officia eveniet nisi molestiae corrupti dignissimos.",
+      "Não se deve usar vírgula (,) mas ponto (.) nas casas decimais. Caso contrário, o App não funcionará corretamente.",
   },
   {
-    id: "58694a0f-3da1-471f-bd96-145571e29d72",
+    id: "3",
     title:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque iste totam alias vel nam expedita dolorum error. Excepturi, soluta ipsam accusantium dolorum eum officia eveniet nisi molestiae corrupti dignissimos.",
+      "Na página 'Aprovação Direta 🙂', deve-se colocar as notas que sejam iguais ou superiores a 5.0.",
+  },
+  {
+    id: "4",
+    title:
+      "Na página 'Recuperação 😠', deve-se colocar alguma(s) nota(s) que seja(m) inferior(es) a 5.0.",
+  },
+  {
+    id: "5",
+    title:
+      "Caso uma das Médias Semestrais na página 'Recuperação 😠' seja igual ou maior a 5.0, deve-se repetir essa mesma média na nota de sua respectiva 'Recuperação Semestral. Caso contrário, a 'Média Semestral com Recuperação' será incorreta.",
+  },
+  {
+    id: "6",
+    title:
+      "Caso a nota de qualquer 'Recuperação' seja menor que a sua respectiva 'Média Semestral', deve-se descartar a nota da 'Recuperação' e repetir a 'Média Semestral'.",
   },
 ];
 
@@ -38,7 +55,7 @@ const Info = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView>
         <View style={styles.view}>
           <Text style={styles.txtH1}>Instruções</Text>
           <FlatList
@@ -46,6 +63,31 @@ const Info = () => {
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
           />
+        </View>
+        <View style={styles.viewContacts}>
+          <Text style={styles.txtContacts}>
+            Qualquer dúvida ou sugestão, entre em contato pelo{" "}
+            <FontAwesome5
+              onPress={() => {
+                Linking.openURL(
+                  "http://api.whatsapp.com/send?phone=+5579988284730&text=Olá, Gostaria de falar sobre o App das Médias Escolares%0D%0A"
+                );
+              }}
+              name="whatsapp"
+              size={34}
+              color="green"
+            />{" "}
+            ou então pelo{" "}
+            <FontAwesome5
+              onPress={() => {
+                Linking.openURL("https://telegram.me/jcgsr");
+              }}
+              name="telegram-plane"
+              size={34}
+              color="grey"
+            />
+            .
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -71,8 +113,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 30,
     marginTop: 30,
-    textShadowColor: "rgba(0, 0, 0, 0.75)",
-    textShadowOffset: { width: -2, height: 3 },
+    textShadowColor: "rgba(234, 221, 2020, 0.45)",
+    textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 10,
   },
   txtH2: {
@@ -88,11 +130,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#3DF3ED",
     margin: 20,
   },
-  scrollView: {
-    marginHorizontal: 20,
-    marginBottom: 20,
-    width: "90%",
-  },
+
   item: {
     backgroundColor: "#071458",
     padding: 20,
@@ -103,5 +141,14 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+  },
+  viewContacts: {
+    display: "flex",
+    backgroundColor: "#121212",
+    padding: 20,
+    // margin: 20,
+  },
+  txtContacts: {
+    color: "#96A5EF",
   },
 });
