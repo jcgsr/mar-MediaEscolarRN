@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   View,
   Text,
@@ -6,8 +6,8 @@ import {
   SafeAreaView,
   ScrollView,
   FlatList,
-  TouchableOpacity,
   Linking,
+  LogBox,
 } from "react-native";
 
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -15,7 +15,8 @@ import { FontAwesome5 } from "@expo/vector-icons";
 const DATA = [
   {
     id: "1",
-    title: "A média utilizada nesse App é 5.0.",
+    title:
+      "A média utilizada nesse App pode ser 5.0, 6.0, 7.0 etc... Fica a critério do usuário escolher qual média utilizar.",
   },
   {
     id: "2",
@@ -25,17 +26,17 @@ const DATA = [
   {
     id: "3",
     title:
-      "Na página 'Aprovação Direta 🙂', deve-se colocar as notas que sejam iguais ou superiores a 5.0.",
+      "Na página 'Aprovação Direta 🙂', deve-se colocar as notas que sejam iguais ou superiores a 5.0, 6.0, 7.0 etc... De acordo com a média escolhida.",
   },
   {
     id: "4",
     title:
-      "Na página 'Recuperação 😠', deve-se colocar alguma(s) nota(s) que seja(m) inferior(es) a 5.0.",
+      "Na página 'Recuperação 😠', deve-se colocar alguma(s) nota(s) que seja(m) inferior(es) à média escolhida.",
   },
   {
     id: "5",
     title:
-      "Caso uma das Médias Semestrais na página 'Recuperação 😠' seja igual ou maior a 5.0, deve-se repetir essa mesma média na nota de sua respectiva 'Recuperação Semestral. Caso contrário, a 'Média Semestral com Recuperação' será incorreta.",
+      "Caso uma das Médias Semestrais na página 'Recuperação 😠' seja igual ou maior a média escolhida, deve-se repetir essa mesma média na nota de sua respectiva 'Recuperação Semestral. Caso contrário, a 'Média Semestral com Recuperação' será incorreta.",
   },
   {
     id: "6",
@@ -51,11 +52,14 @@ const Item = ({ title }) => (
 );
 
 const Info = () => {
+  useEffect(() => {
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
+  }, []);
   const renderItem = ({ item }) => <Item title={item.title} />;
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView keyboardShouldPersistTaps="always">
         <View style={styles.view}>
           <Text style={styles.txtH1}>Instruções</Text>
           <FlatList
