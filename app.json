@@ -2,7 +2,7 @@
   "expo": {
     "name": "Média Escolar",
     "slug": "mediaEscolar",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -23,7 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "versionCode": 4,
+      "versionCode": 5,
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-2008019372085379~5724341062"
       },
