@@ -26,17 +26,17 @@ const DATA = [
   {
     id: "3",
     title:
-      "Na página 'Aprovação Direta 🙂', deve-se colocar as notas que sejam iguais ou superiores a 5.0, 6.0, 7.0 etc... De acordo com a média escolhida.",
+      "Na página 'Aprovação Direta 🏃', deve-se colocar as notas que sejam iguais ou superiores a 5.0, 6.0, 7.0 etc... De acordo com a média escolhida.",
   },
   {
     id: "4",
     title:
-      "Na página 'Recuperação 😠', deve-se colocar alguma(s) nota(s) que seja(m) inferior(es) à média escolhida.",
+      "Na página 'Recuperação 🚣‍♂️', deve-se colocar alguma(s) nota(s) que seja(m) inferior(es) à média escolhida.",
   },
   {
     id: "5",
     title:
-      "Caso uma das Médias Semestrais na página 'Recuperação 😠' seja igual ou maior a média escolhida, deve-se repetir essa mesma média na nota de sua respectiva 'Recuperação Semestral. Caso contrário, a 'Média Semestral com Recuperação' será incorreta.",
+      "Caso uma das Médias Semestrais na página 'Recuperação 🚣‍♂️' seja igual ou maior a média escolhida, deve-se repetir essa mesma média na nota de sua respectiva 'Recuperação Semestral. Caso contrário, a 'Média Semestral com Recuperação' será incorreta.",
   },
   {
     id: "6",
@@ -88,7 +88,7 @@ const Info = () => {
               }}
               name="telegram-plane"
               size={34}
-              color="grey"
+              color="#ddd"
             />
             .
           </Text>
@@ -103,7 +103,7 @@ export default Info;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#141C41",
+    backgroundColor: "#ddd",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   txtH1: {
-    color: "#96A5EF",
+    color: "#000",
     fontSize: 30,
     marginBottom: 30,
     marginTop: 30,
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   txtH2: {
-    color: "#6477D8",
+    color: "#000",
     fontSize: 22,
     marginBottom: 15,
     marginTop: 15,
@@ -131,12 +131,12 @@ const styles = StyleSheet.create({
   txtHR: {
     height: 1,
     width: "100%",
-    backgroundColor: "#3DF3ED",
+    backgroundColor: "#ddd",
     margin: 20,
   },
 
   item: {
-    backgroundColor: "#071458",
+    backgroundColor: "#eee",
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -153,6 +153,6 @@ const styles = StyleSheet.create({
     // margin: 20,
   },
   txtContacts: {
-    color: "#96A5EF",
+    color: "#ddd",
   },
 });

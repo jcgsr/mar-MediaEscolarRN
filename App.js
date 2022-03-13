@@ -1,15 +1,12 @@
 // 03.03.2022
 // primero app meu Android e iOS
-import React, { useState, useRef } from "react";
-// import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import React from "react";
 
 import Direta from "./src/components/Direta";
 import Recuperacao from "./src/components/Recuperacao";
 import Info from "./src/components/Info";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-// <MaterialCommunityIcons name="emoticon-angry" size={24} color="black" />
 
 // navigation
 import { NavigationContainer } from "@react-navigation/native";
@@ -25,7 +22,7 @@ export default function App() {
           tabBarHideOnKeyboard: true,
           tabBarActiveTintColor: "#DFDEEB",
           tabBarStyle: {
-            backgroundColor: "#3F5656",
+            backgroundColor: "#444",
             borderTopWidth: 0,
           },
         }}
@@ -37,16 +34,16 @@ export default function App() {
             tabBarIcon: ({ color, size }) => {
               return (
                 <MaterialCommunityIcons
-                  name="emoticon-happy"
+                  name="run-fast"
                   size={24}
-                  color="#008B8B"
+                  color="#ccc"
                 />
               );
             },
             headerStyle: {
-              backgroundColor: "#2D6769",
+              backgroundColor: "#555",
             },
-            headerTintColor: "#008B8B",
+            headerTintColor: "#efeff9",
           }}
         />
         <Tab.Screen
@@ -55,17 +52,13 @@ export default function App() {
           options={{
             tabBarIcon: ({ color, size }) => {
               return (
-                <MaterialCommunityIcons
-                  name="emoticon-angry"
-                  size={24}
-                  color="#401A3E"
-                />
+                <MaterialCommunityIcons name="rowing" size={24} color="#ccc" />
               );
             },
             headerStyle: {
-              backgroundColor: "#611F7D",
+              backgroundColor: "#777",
             },
-            headerTintColor: "#AE27E8",
+            headerTintColor: "#fffff9",
           }}
         />
         <Tab.Screen
@@ -77,31 +70,17 @@ export default function App() {
                 <MaterialCommunityIcons
                   name="information"
                   size={24}
-                  color="#407EC1"
+                  color="#ccc"
                 />
               );
             },
             headerStyle: {
-              backgroundColor: "#182879",
+              backgroundColor: "#999",
             },
-            headerTintColor: "#407EC1",
+            headerTintColor: "#222",
           }}
         />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#008B8B",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-//   scrollView: {
-//     marginHorizontal: 20,
-//     marginBottom: 20,
-//     width: "100%",
-//   },
-// });

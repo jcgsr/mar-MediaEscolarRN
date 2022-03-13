@@ -46,7 +46,7 @@ const Direta = () => {
           <View style={styles.viewSem1}>
             <TextInput
               placeholder="1ª nota"
-              placeholderTextColor="#999"
+              placeholderTextColor="#888"
               onFocus={() => grade1Ref.current.focus()}
               selectTextOnFocus
               keyboardType="numeric"
@@ -57,7 +57,7 @@ const Direta = () => {
             />
             <TextInput
               placeholder="2ª nota"
-              placeholderTextColor="#999"
+              placeholderTextColor="#888"
               keyboardType="numeric"
               selectTextOnFocus
               ref={grade2Ref}
@@ -77,7 +77,7 @@ const Direta = () => {
           <View style={styles.viewSem2}>
             <TextInput
               placeholder="3ª nota"
-              placeholderTextColor="#999"
+              placeholderTextColor="#888"
               onFocus={() => grade3Ref.current.focus()}
               selectTextOnFocus
               keyboardType="numeric"
@@ -88,7 +88,7 @@ const Direta = () => {
             />
             <TextInput
               placeholder="4ª nota"
-              placeholderTextColor="#999"
+              placeholderTextColor="#888"
               keyboardType="numeric"
               selectTextOnFocus
               ref={grade4Ref}
@@ -128,19 +128,19 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     alignItems: "flex-start",
     justifyContent: "space-evenly",
-    backgroundColor: "#1C4D4F",
+    backgroundColor: "#c1c1c1",
   },
   viewSem1: {
     width: "50%",
-    backgroundColor: "#1c544f",
+    backgroundColor: "#efeff1",
   },
   viewSem2: {
     width: "50%",
-    backgroundColor: "#1c584f",
+    backgroundColor: "#efeff5",
   },
   viewAverage: {
     width: "100%",
-    backgroundColor: "#1c543e",
+    backgroundColor: "#efeff9",
   },
   scrollView: {
     // marginHorizontal: 20,
@@ -157,53 +157,54 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   txtH2: {
-    color: "#7CD0CC",
+    color: "#000",
     fontSize: 15,
     marginBottom: 15,
     marginTop: 15,
     textShadowColor: "rgba(0, 0, 0, 0.75)",
-    textShadowOffset: { width: -2, height: 3 },
-    textShadowRadius: 10,
+    textShadowOffset: { width: 2, height: 1 },
+    textShadowRadius: 4,
     textAlign: "center",
   },
   input: {
     margin: 30,
     borderBottomWidth: 1,
-    borderBottomColor: "#A6D8D6",
+    borderBottomColor: "#000",
     padding: 2,
     fontSize: 20,
-    color: "white",
+    color: "#000",
     textAlign: "center",
   },
   average: {
     fontSize: 65,
-    color: "#7CD0CC",
+    color: "#000",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
-    textShadowOffset: { width: -2, height: 3 },
-    textShadowRadius: 10,
+    textShadowOffset: { width: 4, height: 3 },
+    textShadowRadius: 4,
     textAlign: "center",
   },
   generalAverage: {
     fontSize: 75,
-    color: "#3DF3ED",
-    textShadowColor: "rgba(0, 0, 0, 0.75)",
-    textShadowOffset: { width: -1, height: 1 },
-    textShadowRadius: 10,
+    fontWeight: "bold",
+    color: "#000",
+    textShadowColor: "rgba(90, 90, 90, 0.75)",
+    textShadowOffset: { width: 4, height: 1 },
+    textShadowRadius: 4,
     textAlign: "center",
   },
   txtAverage: {
     fontSize: 20,
     marginTop: 30,
-    color: "#3DF3ED",
+    color: "#000",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
-    textShadowOffset: { width: -2, height: 3 },
-    textShadowRadius: 10,
+    textShadowOffset: { width: 2, height: 1 },
+    textShadowRadius: 4,
     textAlign: "center",
   },
   txtHR: {
     height: 1,
     width: "90%",
-    backgroundColor: "#3DF3ED",
+    backgroundColor: "#CACAD5",
     margin: 20,
   },
   scrollView: {
@@ -214,7 +215,7 @@ const styles = StyleSheet.create({
   btn: {
     height: 40,
     width: "50%",
-    backgroundColor: "#0C3231",
+    backgroundColor: "#666",
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
@@ -223,7 +224,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   btnText: {
-    color: "#7CD0CC",
+    color: "white",
     fontSize: 15,
   },
   view: {
