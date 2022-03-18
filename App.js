@@ -4,6 +4,7 @@ import React from "react";
 
 import Direta from "./src/components/Direta";
 import Recuperacao from "./src/components/Recuperacao";
+import Seis from "./src/components/Seis";
 import Info from "./src/components/Info";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -53,6 +54,25 @@ export default function App() {
             tabBarIcon: ({ color, size }) => {
               return (
                 <MaterialCommunityIcons name="rowing" size={24} color="#ccc" />
+              );
+            },
+            headerStyle: {
+              backgroundColor: "#777",
+            },
+            headerTintColor: "#fffff9",
+          }}
+        />
+        <Tab.Screen
+          name="Seis Notas"
+          component={Seis}
+          options={{
+            tabBarIcon: ({ color, size }) => {
+              return (
+                <MaterialCommunityIcons
+                  name="numeric-6-box-multiple"
+                  size={24}
+                  color="#ccc"
+                />
               );
             },
             headerStyle: {

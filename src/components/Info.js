@@ -26,20 +26,26 @@ const DATA = [
   {
     id: "3",
     title:
-      "Na página 'Aprovação Direta 🏃', deve-se colocar as notas que sejam iguais ou superiores a 5.0, 6.0, 7.0 etc... De acordo com a média escolhida.",
+      "Ambas as tabs 'Aprovação Direta 🏃' e 'Recuperação 🚣' possuem quatro campos para 04 notas anuais, sendo duas para cada semestre. Já a tab 'Seis', surpreendentemente, possui seis campos para as 06 notas anuais, sendo três para cada semestre.",
   },
+
   {
     id: "4",
     title:
-      "Na página 'Recuperação 🚣‍♂️', deve-se colocar alguma(s) nota(s) que seja(m) inferior(es) à média escolhida.",
+      "Na tab 'Aprovação Direta 🏃', deve-se colocar as notas, de acordo com a média escolhida, que sejam iguais ou superiores a 5.0, 6.0, 7.0 etc.",
   },
   {
     id: "5",
     title:
-      "Caso uma das Médias Semestrais na página 'Recuperação 🚣‍♂️' seja igual ou maior a média escolhida, deve-se repetir essa mesma média na nota de sua respectiva 'Recuperação Semestral. Caso contrário, a 'Média Semestral com Recuperação' será incorreta.",
+      "Na tab 'Recuperação 🚣', deve-se colocar pelo menos alguma nota que seja inferior à média escolhida.",
   },
   {
     id: "6",
+    title:
+      "Caso uma das Médias Semestrais na página 'Recuperação 🚣' seja igual ou maior a média escolhida, deve-se repetir essa mesma média na nota de sua respectiva 'Recuperação Semestral. Caso contrário, a 'Média Semestral com Recuperação' será incorreta.",
+  },
+  {
+    id: "7",
     title:
       "Caso a nota de qualquer 'Recuperação' seja menor que a sua respectiva 'Média Semestral', deve-se descartar a nota da 'Recuperação' e repetir a 'Média Semestral'.",
   },

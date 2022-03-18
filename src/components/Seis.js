@@ -9,32 +9,63 @@ import {
   ScrollView,
 } from "react-native";
 
-const Recuperacao = () => {
+const Seis = () => {
   // 1º Semestre
+  // Diretas
+  const [grade1D, setGrade1D] = useState(0);
+  const [grade2D, setGrade2D] = useState(0);
+  const [grade3D, setGrade3D] = useState(0);
+  const total1D = grade1D + grade2D + grade3D;
+  const average1D = total1D / 3;
+
+  const grade1DRef = useRef(null);
+  const grade2DRef = useRef(null);
+  const grade3DRef = useRef(null);
+
+  // Recuperação
   const [grade1, setGrade1] = useState(0);
   const [grade2, setGrade2] = useState(0);
+  const [grade3, setGrade3] = useState(0);
   const [rec1, setRec1] = useState(0);
-  const total1 = grade1 + grade2;
-  const average1 = total1 / 2;
+  const total1 = grade1 + grade2 + grade3;
+  const average1 = total1 / 3;
   const averageRec1 = (average1 + rec1) / 2;
 
   const grade1Ref = useRef(null);
   const grade2Ref = useRef(null);
+  const grade3Ref = useRef(null);
   const rec1Ref = useRef(null);
 
   // 2º Semestre
-  const [grade3, setGrade3] = useState(0);
+  // Diretas
+  const [grade4D, setGrade4D] = useState(0);
+  const [grade5D, setGrade5D] = useState(0);
+  const [grade6D, setGrade6D] = useState(0);
+
+  const total2D = grade4D + grade5D + grade6D;
+  const average2D = total2D / 3;
+
+  const grade4DRef = useRef(null);
+  const grade5DRef = useRef(null);
+  const grade6DRef = useRef(null);
+
+  // Recuperação
   const [grade4, setGrade4] = useState(0);
+  const [grade5, setGrade5] = useState(0);
+  const [grade6, setGrade6] = useState(0);
   const [rec2, setRec2] = useState(0);
-  const total2 = grade3 + grade4;
-  const average2 = total2 / 2;
+  const total2 = grade4 + grade5 + grade6;
+  const average2 = total2 / 3;
   const averageRec2 = (average2 + rec2) / 2;
 
-  const grade3Ref = useRef(null);
   const grade4Ref = useRef(null);
+  const grade5Ref = useRef(null);
+  const grade6Ref = useRef(null);
+
   const rec2Ref = useRef(null);
 
   // média geral
+  const averageD = (average1D + average2D) / 2;
   const average = (averageRec1 + averageRec2) / 2;
 
   // arredondar
@@ -47,9 +78,17 @@ const Recuperacao = () => {
     grade1Ref.current.clear();
     grade1Ref.current.focus();
     grade2Ref.current.clear();
-    rec1Ref.current.clear();
     grade3Ref.current.clear();
+    grade1DRef.current.focus();
+    grade2DRef.current.clear();
+    grade3DRef.current.clear();
+    rec1Ref.current.clear();
     grade4Ref.current.clear();
+    grade5Ref.current.clear();
+    grade6Ref.current.clear();
+    grade4DRef.current.clear();
+    grade5DRef.current.clear();
+    grade6DRef.current.clear();
     rec2Ref.current.clear();
   };
   return (
@@ -57,6 +96,104 @@ const Recuperacao = () => {
       <ScrollView>
         <View style={styles.container}>
           {/* 1º Semestre */}
+          <Text style={styles.txtH1}>Aprovação Direta</Text>
+          <View style={styles.viewSem1}>
+            <TextInput
+              placeholder="1ª nota"
+              placeholderTextColor="#999"
+              onFocus={() => grade1DRef.current.focus()}
+              selectTextOnFocus
+              keyboardType="numeric"
+              ref={grade1DRef}
+              style={styles.input}
+              onChangeText={(text) => setGrade1D(parseFloat(text))}
+              onSubmitEditing={() => grade2DRef.current.focus()}
+            />
+            <TextInput
+              placeholder="2ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade2DRef}
+              style={styles.input}
+              onChangeText={(text) => setGrade2D(parseFloat(text))}
+              onSubmitEditing={() => grade3DRef.current.focus()}
+            />
+            <TextInput
+              placeholder="3ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade3DRef}
+              style={styles.input}
+              onChangeText={(text) => setGrade3D(parseFloat(text))}
+              onSubmitEditing={() => grade4DRef.current.focus()}
+            />
+
+            <View>
+              <Text style={styles.txtH2}>Média 1º Sem.</Text>
+              <Text style={styles.average}> {round(average1D, 2)}</Text>
+            </View>
+          </View>
+          {/* <Text style={styles.txtHR}></Text> */}
+
+          {/* 2º Semestre */}
+          <View style={styles.viewSem2}>
+            <TextInput
+              placeholder="4ª nota"
+              placeholderTextColor="#999"
+              onFocus={() => grade4DRef.current.focus()}
+              selectTextOnFocus
+              keyboardType="numeric"
+              ref={grade4DRef}
+              style={styles.input}
+              onChangeText={(text) => setGrade4D(parseFloat(text))}
+              onSubmitEditing={() => grade5DRef.current.focus()}
+            />
+            <TextInput
+              placeholder="5ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade5DRef}
+              style={styles.input}
+              onChangeText={(text) => setGrade5D(parseFloat(text))}
+              onSubmitEditing={() => grade6DRef.current.focus()}
+            />
+            <TextInput
+              placeholder="6ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade6DRef}
+              style={styles.input}
+              onChangeText={(text) => setGrade6D(parseFloat(text))}
+            />
+
+            <View>
+              <Text style={styles.txtH2}>Média 2º Sem.</Text>
+              <Text style={styles.average}> {round(average2D, 2)}</Text>
+            </View>
+          </View>
+          {/* <Text style={styles.txtHR}></Text> */}
+          <View style={styles.viewAverage}>
+            <View>
+              <Text style={styles.txtAverage}>Média Geral</Text>
+              <Text style={styles.generalAverage}> {round(averageD, 2)}</Text>
+            </View>
+            <Text style={styles.txtHR}></Text>
+            <View style={styles.view}>
+              <TouchableOpacity style={styles.btn} onPress={handleDelete}>
+                <Text style={styles.btnText}>Apagar Notas</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        {/*RECUPERAÇÃO*/}
+        <Text style={styles.txtHR} />
+        <View style={styles.container}>
+          {/* 1º Semestre */}
+          <Text style={styles.txtH1}>Recuperação</Text>
           <View style={styles.viewSem1}>
             <TextInput
               placeholder="1ª nota"
@@ -77,6 +214,16 @@ const Recuperacao = () => {
               ref={grade2Ref}
               style={styles.input}
               onChangeText={(text) => setGrade2(parseFloat(text))}
+              onSubmitEditing={() => grade3Ref.current.focus()}
+            />
+            <TextInput
+              placeholder="3ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade3Ref}
+              style={styles.input}
+              onChangeText={(text) => setGrade3(parseFloat(text))}
               onSubmitEditing={() => rec1Ref.current.focus()}
             />
 
@@ -91,7 +238,7 @@ const Recuperacao = () => {
                 ref={rec1Ref}
                 style={styles.input}
                 onChangeText={(text) => setRec1(parseFloat(text))}
-                onSubmitEditing={() => grade3Ref.current.focus()}
+                onSubmitEditing={() => grade4Ref.current.focus()}
               />
               <Text style={styles.txtInfo}>
                 Obs.: repetir média semestral se recuperação menor ou igual à
@@ -106,24 +253,35 @@ const Recuperacao = () => {
           {/* 2º Semestre */}
           <View style={styles.viewSem2}>
             <TextInput
-              placeholder="3ª nota"
-              placeholderTextColor="#999"
-              onFocus={() => grade3Ref.current.focus()}
-              selectTextOnFocus
-              keyboardType="numeric"
-              ref={grade3Ref}
-              style={styles.input}
-              onChangeText={(text) => setGrade3(parseFloat(text))}
-              onSubmitEditing={() => grade4Ref.current.focus()}
-            />
-            <TextInput
               placeholder="4ª nota"
               placeholderTextColor="#999"
-              keyboardType="numeric"
+              onFocus={() => grade4Ref.current.focus()}
               selectTextOnFocus
+              keyboardType="numeric"
               ref={grade4Ref}
               style={styles.input}
               onChangeText={(text) => setGrade4(parseFloat(text))}
+              onSubmitEditing={() => grade5Ref.current.focus()}
+            />
+            <TextInput
+              placeholder="5ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade5Ref}
+              style={styles.input}
+              onChangeText={(text) => setGrade5(parseFloat(text))}
+              onSubmitEditing={() => grade6Ref.current.focus()}
+            />
+            <TextInput
+              placeholder="6ª nota"
+              placeholderTextColor="#999"
+              keyboardType="numeric"
+              selectTextOnFocus
+              ref={grade6Ref}
+              style={styles.input}
+              onChangeText={(text) => setGrade6(parseFloat(text))}
+              onSubmitEditing={() => rec2Ref.current.focus()}
             />
 
             <View>
@@ -165,7 +323,7 @@ const Recuperacao = () => {
   );
 };
 
-export default Recuperacao;
+export default Seis;
 
 const styles = StyleSheet.create({
   container: {
@@ -179,7 +337,7 @@ const styles = StyleSheet.create({
   },
   viewSem1: {
     width: "50%",
-    backgroundColor: "#fffff1",
+    backgroundColor: "#fefefe",
   },
   viewSem2: {
     width: "50%",
@@ -187,7 +345,7 @@ const styles = StyleSheet.create({
   },
   viewAverage: {
     width: "100%",
-    backgroundColor: "#fffff9",
+    backgroundColor: "#ffffff",
   },
   scrollView: {
     // marginHorizontal: 20,
@@ -195,7 +353,7 @@ const styles = StyleSheet.create({
     // width: "100%",
   },
   txtH1: {
-    color: "#7CD0CC",
+    color: "#ccc",
     fontSize: 30,
     marginBottom: 30,
     marginTop: 30,

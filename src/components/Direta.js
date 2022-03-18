@@ -31,6 +31,12 @@ const Direta = () => {
   // média geral
   const average = (average1 + average2) / 2;
 
+  // arredondar
+  const round = (num, dec = 0) => {
+    let p = Math.pow(10, dec);
+    return Math.round(num * p) / p;
+  };
+
   const handleDelete = () => {
     grade1Ref.current.clear();
     grade1Ref.current.focus();
@@ -68,7 +74,7 @@ const Direta = () => {
 
             <View>
               <Text style={styles.txtH2}>Média 1º Sem.</Text>
-              <Text style={styles.average}> {average1.toFixed(1)}</Text>
+              <Text style={styles.average}> {round(average1, 2)}</Text>
             </View>
           </View>
           {/* <Text style={styles.txtHR}></Text> */}
@@ -98,13 +104,13 @@ const Direta = () => {
 
             <View>
               <Text style={styles.txtH2}>Média 2º Sem.</Text>
-              <Text style={styles.average}> {average2.toFixed(1)}</Text>
+              <Text style={styles.average}> {round(average2, 2)}</Text>
             </View>
           </View>
           {/* <Text style={styles.txtHR}></Text> */}
           <View style={styles.viewAverage}>
             <Text style={styles.txtAverage}>Média Geral</Text>
-            <Text style={styles.generalAverage}> {average.toFixed(1)}</Text>
+            <Text style={styles.generalAverage}> {round(average, 2)}</Text>
             <Text style={styles.txtHR}></Text>
             <View style={styles.view}>
               <TouchableOpacity style={styles.btn} onPress={handleDelete}>
