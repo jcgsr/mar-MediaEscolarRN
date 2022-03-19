@@ -188,12 +188,11 @@ const Seis = () => {
               </TouchableOpacity>
             </View>
           </View>
+          <Text style={styles.txtH1}>Recuperação</Text>
         </View>
         {/*RECUPERAÇÃO*/}
-        <Text style={styles.txtHR} />
         <View style={styles.container}>
           {/* 1º Semestre */}
-          <Text style={styles.txtH1}>Recuperação</Text>
           <View style={styles.viewSem1}>
             <TextInput
               placeholder="1ª nota"
