@@ -16,6 +16,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  // Android interstitial: ca-app-pub-2008019372085379/1871438530
+  // Android banner: ca-app-pub-2008019372085379/2877398443
   return (
     <NavigationContainer>
       <Tab.Navigator
