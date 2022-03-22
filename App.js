@@ -1,6 +1,6 @@
 // 03.03.2022
 // primero app meu Android e iOS
-import React from "react";
+import React, { useEffect } from "react";
 
 import Direta from "./src/components/Direta";
 import Recuperacao from "./src/components/Recuperacao";
@@ -13,9 +13,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+// adMob
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+const App = () => {
   // Android interstitial: ca-app-pub-2008019372085379/1871438530
   // Android banner: ca-app-pub-2008019372085379/2877398443
   return (
@@ -105,4 +106,6 @@ export default function App() {
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+export default App;
