@@ -52,6 +52,11 @@ const DATA = [
     title:
       "Caso a nota de qualquer 'Recuperação' seja menor que a sua respectiva 'Média Semestral', deve-se descartar a nota da 'Recuperação' e repetir a 'Média Semestral'.",
   },
+  {
+    id: "8",
+    title:
+      "Na tab 'Semestral', basta colocar as médias semestrais, sem necessidade de colocar as notas.",
+  },
 ];
 
 const Item = ({ title }) => (

@@ -6,6 +6,7 @@ import Direta from "./src/components/Direta";
 import Recuperacao from "./src/components/Recuperacao";
 import Seis from "./src/components/Seis";
 import Info from "./src/components/Info";
+import Semestral from "./src/components/Semestral";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -73,6 +74,25 @@ const App = () => {
               return (
                 <MaterialCommunityIcons
                   name="numeric-6-box-multiple"
+                  size={24}
+                  color="#ccc"
+                />
+              );
+            },
+            headerStyle: {
+              backgroundColor: "#777",
+            },
+            headerTintColor: "#fffff9",
+          }}
+        />
+        <Tab.Screen
+          name="Semestral"
+          component={Semestral}
+          options={{
+            tabBarIcon: ({ color, size }) => {
+              return (
+                <MaterialCommunityIcons
+                  name="calendar-month"
                   size={24}
                   color="#ccc"
                 />
