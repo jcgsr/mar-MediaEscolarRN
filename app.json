@@ -2,7 +2,7 @@
   "expo": {
     "name": "Média Escolar",
     "slug": "mediaEscolar",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -14,9 +14,7 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/43cfa8f7-3f71-41a1-9640-4ac9fbcf78ee"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.jcgsr.mediaEscolar"
@@ -26,7 +24,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "versionCode": 10,
+      "versionCode": 11,
       "package": "com.jcgsr.mediaEscolar"
     },
     "web": {
