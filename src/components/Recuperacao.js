@@ -10,12 +10,12 @@ import {
 } from "react-native";
 
 // adMob
-import { AdMobBanner, setTestDeviceIDAsync } from "expo-ads-admob";
+// import { AdMobBanner, setTestDeviceIDAsync } from "expo-ads-admob";
 
 const Recuperacao = () => {
-  useEffect(() => {
-    setTestDeviceIDAsync("EMULATOR");
-  }, []);
+  // useEffect(() => {
+  //   setTestDeviceIDAsync("EMULATOR");
+  // }, []);
   // 1º Semestre
   const [grade1, setGrade1] = useState(0);
   const [grade2, setGrade2] = useState(0);
@@ -62,12 +62,12 @@ const Recuperacao = () => {
     <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
-          <AdMobBanner
+          {/* <AdMobBanner
             bannerSize="smartBanner"
             adUnitID="ca-app-pub-2008019372085379/2877398443"
             servePersonalizedAds // true or false
             onDidFailToReceiveAdWithError={(e) => console.log(e)}
-          />
+          /> */}
           {/* 1º Semestre */}
           <View style={styles.viewSem1}>
             <TextInput
@@ -171,12 +171,12 @@ const Recuperacao = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <AdMobBanner
+          {/* <AdMobBanner
             bannerSize="smartBanner"
             adUnitID="ca-app-pub-2008019372085379/2877398443"
             servePersonalizedAds // true or false
             onDidFailToReceiveAdWithError={(e) => console.log(e)}
-          />
+          /> */}
         </View>
       </ScrollView>
     </SafeAreaView>

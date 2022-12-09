@@ -10,12 +10,12 @@ import {
 } from "react-native";
 
 // adMob
-import { AdMobBanner, setTestDeviceIDAsync } from "expo-ads-admob";
+// import { AdMobBanner, setTestDeviceIDAsync } from "expo-ads-admob";
 
 const Seis = () => {
-  useEffect(() => {
-    setTestDeviceIDAsync("EMULATOR");
-  }, []);
+  // useEffect(() => {
+  //   setTestDeviceIDAsync("EMULATOR");
+  // }, []);
   // 1º Semestre
   // Diretas
   const [grade1D, setGrade1D] = useState(0);
@@ -101,12 +101,12 @@ const Seis = () => {
     <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
-          <AdMobBanner
+          {/* <AdMobBanner
             bannerSize="smartBanner"
             adUnitID="ca-app-pub-2008019372085379/2877398443"
             servePersonalizedAds // true or false
             onDidFailToReceiveAdWithError={(e) => console.log(e)}
-          />
+          /> */}
           {/* 1º Semestre */}
           <Text style={styles.txtH1}>Aprovação Direta</Text>
           <View style={styles.viewSem1}>
@@ -328,12 +328,12 @@ const Seis = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <AdMobBanner
+          {/* <AdMobBanner
             bannerSize="smartBanner"
             adUnitID="ca-app-pub-2008019372085379/2877398443"
             servePersonalizedAds // true or false
             onDidFailToReceiveAdWithError={(e) => console.log(e)}
-          />
+          /> */}
         </View>
       </ScrollView>
     </SafeAreaView>

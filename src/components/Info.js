@@ -13,7 +13,7 @@ import {
 import { FontAwesome5 } from "@expo/vector-icons";
 
 // adMob
-import { AdMobBanner, setTestDeviceIDAsync } from "expo-ads-admob";
+// import { AdMobBanner, setTestDeviceIDAsync } from "expo-ads-admob";
 
 const DATA = [
   {
@@ -69,21 +69,21 @@ const Info = () => {
   useEffect(() => {
     LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
   }, []);
-  useEffect(() => {
-    setTestDeviceIDAsync("EMULATOR");
-  }, []);
+  // useEffect(() => {
+  //   setTestDeviceIDAsync("EMULATOR");
+  // }, []);
   const renderItem = ({ item }) => <Item title={item.title} />;
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView keyboardShouldPersistTaps="always">
         <View style={styles.view}>
-          <AdMobBanner
+          {/* <AdMobBanner
             bannerSize="smartBanner"
             adUnitID="ca-app-pub-2008019372085379/2877398443"
             servePersonalizedAds // true or false
             onDidFailToReceiveAdWithError={(e) => console.log(e)}
-          />
+          /> */}
           <Text style={styles.txtH1}>Instruções</Text>
           <FlatList
             data={DATA}
@@ -116,12 +116,12 @@ const Info = () => {
             .
           </Text>
         </View>
-        <AdMobBanner
+        {/* <AdMobBanner
           bannerSize="smartBanner"
           adUnitID="ca-app-pub-2008019372085379/2877398443"
           servePersonalizedAds // true or false
           onDidFailToReceiveAdWithError={(e) => console.log(e)}
-        />
+        /> */}
       </ScrollView>
     </SafeAreaView>
   );

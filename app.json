@@ -11,7 +11,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/43cfa8f7-3f71-41a1-9640-4ac9fbcf78ee"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -26,9 +27,6 @@
         "backgroundColor": "#FFFFFF"
       },
       "versionCode": 10,
-      "config": {
-        "googleMobileAdsAppId": "ca-app-pub-2008019372085379~5724341062"
-      },
       "package": "com.jcgsr.mediaEscolar"
     },
     "web": {
@@ -38,6 +36,9 @@
       "eas": {
         "projectId": "43cfa8f7-3f71-41a1-9640-4ac9fbcf78ee"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }

@@ -10,16 +10,16 @@ import {
 } from "react-native";
 
 // adMob
-import {
-  // AdMobInterstitial,
-  AdMobBanner,
-  setTestDeviceIDAsync,
-} from "expo-ads-admob";
+// import {
+//   // AdMobInterstitial,
+//   AdMobBanner,
+//   setTestDeviceIDAsync,
+// } from "expo-ads-admob";
 
 const Semestral = () => {
-  useEffect(() => {
-    setTestDeviceIDAsync("EMULATOR");
-  }, []);
+  // useEffect(() => {
+  //   setTestDeviceIDAsync("EMULATOR");
+  // }, []);
 
   // 1º Semestre
   const [sem1, setSem1] = useState(0);
@@ -49,12 +49,12 @@ const Semestral = () => {
     <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
-          <AdMobBanner
+          {/* <AdMobBanner
             bannerSize="smartBanner"
             adUnitID="ca-app-pub-2008019372085379/2877398443"
             servePersonalizedAds // true or false
             onDidFailToReceiveAdWithError={(e) => console.log(e)}
-          />
+          /> */}
           {/* 1º Semestre */}
           <View style={styles.viewSem}>
             <TextInput
@@ -88,12 +88,12 @@ const Semestral = () => {
                 </TouchableOpacity>
               </View>
             </View>
-            <AdMobBanner
+            {/* <AdMobBanner
               bannerSize="smartBanner"
               adUnitID="ca-app-pub-2008019372085379/2877398443"
               servePersonalizedAds // true or false
               onDidFailToReceiveAdWithError={(e) => console.log(e)}
-            />
+            /> */}
           </View>
         </View>
       </ScrollView>
