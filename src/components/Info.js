@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   SafeAreaView,
-  ScrollView,
   FlatList,
   Linking,
   LogBox,
@@ -76,53 +75,61 @@ const Info = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView keyboardShouldPersistTaps="always">
-        <View style={styles.view}>
-          {/* <AdMobBanner
+      {/* <View style={styles.view}> */}
+      {/* <AdMobBanner
             bannerSize="smartBanner"
             adUnitID="ca-app-pub-2008019372085379/2877398443"
             servePersonalizedAds // true or false
             onDidFailToReceiveAdWithError={(e) => console.log(e)}
           /> */}
-          <Text style={styles.txtH1}>Instruções</Text>
-          <FlatList
-            data={DATA}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.id}
-          />
-        </View>
-        <View style={styles.viewContacts}>
-          <Text style={styles.txtContacts}>
-            Qualquer dúvida ou sugestão, entre em contato pelo{" "}
-            <FontAwesome5
-              onPress={() => {
-                Linking.openURL(
-                  "http://api.whatsapp.com/send?phone=+5579988284730&text=Olá, Gostaria de falar sobre o App das Médias Escolares%0D%0A"
-                );
-              }}
-              name="whatsapp"
-              size={34}
-              color="green"
-            />{" "}
-            ou então pelo{" "}
-            <FontAwesome5
-              onPress={() => {
-                Linking.openURL("https://telegram.me/jcgsr");
-              }}
-              name="telegram-plane"
-              size={34}
-              color="#ddd"
-            />
-            .
-          </Text>
-        </View>
-        {/* <AdMobBanner
+      <FlatList
+        ListHeaderComponent={
+          <>
+            <View style={styles.view}>
+              <Text style={styles.txtH1}>Instruções</Text>
+            </View>
+          </>
+        }
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        ListFooterComponent={
+          <>
+            <View style={styles.viewContacts}>
+              <Text style={styles.txtContacts}>
+                Qualquer dúvida ou sugestão, entre em contato pelo{" "}
+                <FontAwesome5
+                  onPress={() => {
+                    Linking.openURL(
+                      "http://api.whatsapp.com/send?phone=+5579988284730&text=Olá, Gostaria de falar sobre o App das Médias Escolares%0D%0A"
+                    );
+                  }}
+                  name="whatsapp"
+                  size={34}
+                  color="green"
+                />{" "}
+                ou então pelo{" "}
+                <FontAwesome5
+                  onPress={() => {
+                    Linking.openURL("https://telegram.me/jcgsr");
+                  }}
+                  name="telegram-plane"
+                  size={34}
+                  color="#ddd"
+                />
+                .
+              </Text>
+            </View>
+          </>
+        }
+      />
+
+      {/* <AdMobBanner
           bannerSize="smartBanner"
           adUnitID="ca-app-pub-2008019372085379/2877398443"
           servePersonalizedAds // true or false
           onDidFailToReceiveAdWithError={(e) => console.log(e)}
         /> */}
-      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -179,7 +186,7 @@ const styles = StyleSheet.create({
     display: "flex",
     backgroundColor: "#121212",
     padding: 20,
-    // margin: 20,
+    // marginBottom: 100,
   },
   txtContacts: {
     color: "#ddd",
